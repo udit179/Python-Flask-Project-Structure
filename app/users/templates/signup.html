@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="loginpage" style="margin-left:60px;">
+	<div class="container" style="padding-top:5%;">
+		<div style="border-bottom: 2px solid orange; margin-bottom:5%;">
+			<h1> Trumen Information System</h1>
+			<p></p>
+			<p>Enter Your Information</p>
+			{% if message %}
+			<p style="color: red;font-weight:bold;">{{ message }}</p>
+			{% endif %}
+		</div>
+
+		<div style="width:350px; padding: 3%; border:2px solid orange;     border-radius: 2%;">
+			<form method="post">
+				<div class="form-group">
+					<label for="inputName">Name</label>
+					<input type="text" name="inputName" class="form-control" id="inputName"
+						placeholder="Enter your name" required>
+				</div>
+				<div class="form-group">
+					<label for="inputEmail">Email</label>
+					<input type="email" name="inputEmail" class="form-control" id="inputEmail"
+						placeholder="email address" required>
+				</div>
+				<div class="form-group">
+					<label for="inputMobile">Mobile No</label>
+					<input type="text" name="inputMobile" class="form-control" id="inputMobile"
+						placeholder="Mobile Number" required>
+				</div>
+				<div class="form-group">
+					<label for="inputPass">Password</label>
+					<input type="password" class="form-control" name="inputPass" id="inputPass" placeholder="password"
+						required>
+				</div>
+				<div class="form-group">
+					<label for="inputRole">Post</label>
+					<input type="text" class="form-control" name="inputRole" id="inputRole" placeholder="Post" required>
+				</div>
+				<div class="form-group">
+					<label for="inputDept">Department</label>
+					<input type="text" class="form-control" name="inputDept" id="inputDept"
+						placeholder="Department name" required>
+				</div>
+				<div class="form-group">
+					<label for="inputSup">Reporting to</label>
+					<input type="text" class="form-control" name="inputSup" id="inputSup" placeholder="Supervisor name"
+						required>
+				</div>
+				<div id="process_register">
+					<button class="btn btn-primary">Register</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

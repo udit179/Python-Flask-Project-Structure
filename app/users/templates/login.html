@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style>
+	#createnewacc {
+		margin-top: 10px;
+		margin-left: 60px;
+	}
+</style>
+
+<div id="loginpage" style="margin-left:60px;">
+	<div class="container" style="padding-top:5%;">
+		<div style="border-bottom: 2px solid black; margin-bottom:5%;">
+			<h1>Trumen Information System</h1>
+			{% if message %}
+			<p style="color: red;font-weight:bold;">{{ message }}</p>
+			{% endif %}
+			{% if confirm %}
+			<p style="color: black;font-weight:bold;">{{ confirm }}</p>
+			{% endif %}
+		</div>
+
+		<div style="width:370px; padding: 3%; border:2px solid rgb(0, 0, 0); border-radius: 2%;">
+			<form method="post">
+				<div class="form-group">
+					<label for="inputEmail">Email</label>
+					<input type="email" name="inputEmail" class="form-control" id="inputEmail"
+						placeholder="registered email address" required>
+				</div>
+				<div class="form-group">
+					<label for="inputPass">Password</label>
+					<input type="password" class="form-control" name="inputPass" id="inputPass" placeholder="password"
+						required>
+				</div>
+				<button type="submit" class="btn btn-primary" formaction="/login">Login</button>
+				<a>
+					<p style="float: right;"> Forgot password ?</p>
+				</a>
+			</form>
+			<a href="/registration">
+				<p id="createnewacc"> Create New Account </p>
+			</a>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
